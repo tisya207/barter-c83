@@ -6,9 +6,9 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import SignupLogin from './screens/SignupLogin';
 import HomeScreen from './screens/HomeScreen'
-import Exchange from './screens/Exchange';
+import ExchangeScreen from './screens/ExchangeScreen';
 import SettingScreen from './screens/SettingScreen.js';
-import customSidebarMenu from './components/customSidebarMenu.js'
+import CustomSideBarMenu from './components/CustomSideBarMenu.js'
 
 
 export default function App() {
@@ -19,7 +19,7 @@ export default function App() {
 
 const TabNavigator = createBottomTabNavigator({
     HomeScreen: {screen: HomeScreen},
-    Exchange: {screen: Exchange},
+    ExchangeScreen: {screen: ExchangeScreen},
   },
   {
     defaultNavigationOptions: ({navigation})=>({
@@ -34,10 +34,10 @@ const TabNavigator = createBottomTabNavigator({
           )
 
         }
-        else if(routeName === "Exchange"){
+        else if(routeName === "ExchangeScreen"){
           return(
             <Image
-            source={require("./assets/ads-icon.png")}
+            source={require("./assets/exchange-icon.png")}
             style={{width:20, height:20,}}
           />)
 
@@ -56,7 +56,7 @@ const AppDrawNavigator = createDrawerNavigator({
     }
   },
   {
-    contentComponent:customSidebarMenu
+    contentComponent:CustomSideBarMenu
   },
   {
     initialRouteName : 'Home'
